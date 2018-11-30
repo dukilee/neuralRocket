@@ -12,7 +12,6 @@ class Rocket:
 		self.angle = utils.wrapToPi(self.angle);
 		self.dh = config.game['scale']*config.rocket['height']/2; #half display height
 		self.dw = config.game['scale']*config.rocket['width']/2; # half display height
-		print(self.x, self.y, self.angle);
 
 	def draw(self, display):
 		pSin = math.sin(self.angle); # precalculated sin
@@ -37,6 +36,12 @@ class Rocket:
 			]
 		
 		);
-		pygame.draw.line(display, (100, 0, 100), [self.x, self.y], [50, 30], 5);
+
+	def update(self, x, y, angle):
+		self.x = x*config.game['scale'] + config.game['width']/2;
+		self.y = config.game['height'] - config.game['floorHeight'] - y*config.game['scale'];
+
+		self.angle = angle
+		self.angle = utils.wrapToPi(self.angle);
 
 	

@@ -13,18 +13,18 @@ initialPosition = {
 	#(0, 0) the center of the floor
 	'x':0, #in meters
 	'y':7, #in meters
-	'angle':math.pi/4, #in radians
+	'angle':math.pi/2 #in radians
 };
 
 rocket = {
 	'mass'        :10,   #in kg
 	'width'       :1,    #in meters
 	'height'      :3,    #in meters
-	'motorPower'  :100,  #in newtons
+	'motorPower'  :10,  #in newtons
 };
 
 physics = {
-	'gravity'   :9.81,   #in m/s²
+	'gravity'   :0.981,   #in m/s²
 };
 
 colors = {
