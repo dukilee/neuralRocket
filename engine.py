@@ -64,13 +64,23 @@ class PhysicsRocket:
 class Engine:
 	def __init__(self):
 		self.rocket = PhysicsRocket()
+		self.crashed = False;
+
+	def checkIfCrashed(self):
+		pSin = abs(math.sin(self.rocket.angle))
+		pCos = abs(math.cos(self.rocket.angle))
+		lowestPointY = self.rocket.y-self.rocket.width/2*pCos-self.rocket.height/2*pSin
+		if lowestPointY < 0:
+			self.crashed = True
 
 
 	'''
 	' Given the power in each motor, updates the rocket position and speed
 	'''
 	def update(self, leftPower, rightPower):
-		self.rocket.update(leftPower, rightPower);
+		if not self.crashed:
+			self.rocket.update(leftPower, rightPower)
+			self.checkIfCrashed()
 
 
 

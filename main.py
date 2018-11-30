@@ -37,8 +37,8 @@ if user:
 
 		rocket.update(engine.rocket.x, engine.rocket.y, engine.rocket.angle, engine.rocket.leftMotor.power, engine.rocket.rightMotor.power)
 
-		rocket.draw(display);
 		field.draw(display)
+		rocket.draw(display);
 
 		# pygame.display.update();
 		pygame.display.flip();
