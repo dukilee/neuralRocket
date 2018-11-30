@@ -6,19 +6,20 @@ game = {
 	'width'  : 800,
 	'fps'    : 30,
 	'scale'  : 50, #conversion from meters to pixels
+	'floorHeight' : 50, #in pixels
 };
 
 initialPosition = {
 	#(0, 0) the center of the floor
 	'x':0, #in meters
-	'y':10, #in meters
-	'angle':math.pi/2, #in radians
+	'y':7, #in meters
+	'angle':math.pi/4, #in radians
 };
 
 rocket = {
 	'mass'        :10,   #in kg
 	'width'       :1,    #in meters
-	'height'      :4,    #in meters
+	'height'      :3,    #in meters
 	'motorPower'  :100,  #in newtons
 };
 
