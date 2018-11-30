@@ -17,7 +17,7 @@ initialPosition = {
 };
 
 rocket = {
-	'mass'        :10,   #in kg
+	'mass'        :7,   #in kg
 	'width'       :1,    #in meters
 	'height'      :3,    #in meters
 	'motorPower'  :10,  #in newtons

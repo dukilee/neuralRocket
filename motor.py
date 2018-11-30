@@ -16,7 +16,7 @@ class Motor:
 		elif expectedPower < 0:
 			expectedPower = 0
 
-		self.power = (self.power + expectedPower)/2
+		self.power = 0.5*self.power + 0.5*expectedPower
 		return self.power
 	
 	'''

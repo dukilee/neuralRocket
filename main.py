@@ -35,7 +35,7 @@ if user:
 			userController.getLeftPower(),
 			userController.getRightPower())
 
-		rocket.update(engine.rocket.x, engine.rocket.y, engine.rocket.angle)
+		rocket.update(engine.rocket.x, engine.rocket.y, engine.rocket.angle, engine.rocket.leftMotor.power, engine.rocket.rightMotor.power)
 
 		rocket.draw(display);
 		field.draw(display)
