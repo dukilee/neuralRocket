@@ -5,15 +5,15 @@ game = {
 	'height' : 600,
 	'width'  : 800,
 	'fps'    : 30,
-	'scale'  : 50, #conversion from meters to pixels
+	'scale'  : 40, #conversion from meters to pixels
 	'floorHeight' : 50, #in pixels
 };
 
 initialPosition = {
 	#(0, 0) the center of the floor
-	'x':0, #in meters
+	'x':-8, #in meters
 	'y':7, #in meters
-	'angle':math.pi/2 #in radians
+	'angle':math.pi/6 #in radians
 };
 
 rocket = {
