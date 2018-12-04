@@ -7,7 +7,7 @@ class Aincrad:
 	def __init__(self):
 		self.generation = 0
 		self.numberOfAgents = 300
-		self.mutationChance = 0.4
+		self.mutationChance = 0.5
 		self.agents = []
 		for i in range(self.numberOfAgents):
 			self.agents.append(Agent())
@@ -38,7 +38,7 @@ class Aincrad:
 				break
 			#fitness+=1
 
-		a.fitness = fitness+cont
+		a.fitness = fitness*10+cont
 			
 		
 	

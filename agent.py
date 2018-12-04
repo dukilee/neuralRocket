@@ -45,7 +45,7 @@ class Agent:
 	def decide(self,  x, y, angle, v, w):
 		goalY = 5;
 
-		inp = [x, goalY-y, math.cos(angle), v.x, v.y, w]
+		inp = [x, goalY-y, angle - math.pi*0.5, v.x, v.y, w]
 
 		middle = []
 		sz = len(inp)
