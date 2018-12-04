@@ -25,6 +25,8 @@ info = Info()
 user = False
 neural = True
 
+reset = False
+
 if neural:
 	generationsToGo = 0
 	while True:
@@ -36,6 +38,8 @@ if neural:
 					exit();
 				elif event.key == pygame.K_n:
 					generationsToGo = 1
+				elif event.key == pygame.K_p:
+					print(agent.genes)
 				elif event.key == pygame.K_m:
 					generationsToGo = 10
 				elif event.key == pygame.K_b:
@@ -44,15 +48,20 @@ if neural:
 					genretationsToGo = 1000
 				elif event.key == pygame.K_s:
 					generationsToGo = 0
+					reset = True
 
 
 		display.fill(config.colors['black']);
 		if generationsToGo>0:
 			generationsToGo -= 1
 			aincrad.nextGeneration()
-			engine = Engine()
 			agent = aincrad.agents[0]
+			reset = True
 		else:
+			if reset:
+				engine = Engine()
+				reset = False
+
 			action = agent.decide(engine.rocket.x, engine.rocket.y, engine.rocket.angle, engine.rocket.linSpd, engine.rocket.angSpd);
 			engine.update(action[0], action[1])
 

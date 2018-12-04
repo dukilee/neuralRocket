@@ -9,6 +9,7 @@ class Aincrad:
 		self.numberOfAgents = 300
 		self.mutationChance = 0.5
 		self.agents = []
+		self.limit = 700
 		for i in range(self.numberOfAgents):
 			self.agents.append(Agent())
 
@@ -29,11 +30,13 @@ class Aincrad:
 
 		fitness = 0;
 		cont = 0
-		while cont<700:
+		while cont<self.limit:
 			cont += 1
 			action = a.decide(engine.rocket.x, engine.rocket.y, engine.rocket.angle, engine.rocket.linSpd, engine.rocket.angSpd);
 			engine.update(action[0], action[1])
 			fitness  = self.gauss(engine.rocket.angle, 0.5, math.pi/2) + 0.9*fitness
+			if math.sin(engine.rocket.angle) < -0.9:
+				break
 			if engine.crashed:
 				break
 			#fitness+=1
@@ -65,7 +68,7 @@ class Aincrad:
 			d-=1
 		
 
-		for i in range(len(self.agents)):
+		for i in range(len(self.agents)//2, len(self.agents)):
 			self.run(self.agents[i])
 
 		self.agents.sort(reverse = True, key = self.sortFunc)
