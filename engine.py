@@ -72,6 +72,10 @@ class Engine:
 		lowestPointY = self.rocket.y-self.rocket.width/2*pCos-self.rocket.height/2*pSin
 		if lowestPointY < 0:
 			self.crashed = True
+		if abs(self.rocket.x)>9:
+			self.crashed = True
+		if self.rocket.y>11:
+			self.crashed = True
 
 
 	'''
@@ -81,6 +85,7 @@ class Engine:
 		if not self.crashed:
 			self.rocket.update(leftPower, rightPower)
 			self.checkIfCrashed()
+	
 
 
 
